@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 
 import java.util.Arrays;
 
@@ -18,15 +19,16 @@ public class TraceAspect {
 
     @Around("execution(public * zxf.springboot.service.*.message.MessageListener.*(..))")
     public Object aroundNewMessage(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("===> New message {}, Parameters : {}", getSignature(joinPoint), Arrays.toString(joinPoint.getArgs()));
         long start = System.currentTimeMillis();
 
         try {
             MDC.put(TraceConstant.TRACE_ID, TraceIdGenerator.generateTraceId(TraceConstant.NEW_MESSAGE));
+            log.info("===> New message {}, Parameters : {}", getSignature(joinPoint), Arrays.toString(joinPoint.getArgs()));
             return joinPoint.proceed();
         } finally {
             long end = System.currentTimeMillis();
             log.info("<=== End message {} in {}", getSignature(joinPoint), getTime(end - start));
+            MDC.clear();
         }
     }
 

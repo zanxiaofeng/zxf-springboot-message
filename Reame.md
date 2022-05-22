@@ -4,4 +4,5 @@
 ## Manager UI
 - http://localhost/15672
 
-# Test
+# Test Message
+- {"type": "USER_CREATED","message": {"id": "1", "name":"davis"}}
