@@ -16,8 +16,8 @@ import java.util.Arrays;
 @Component
 public class TraceAspect {
 
-    @Around("execution(public * zxf.springboot.service.*.message.MessageDispatcher.onMessage(..))")
-    public Object aroundNewMessaget(ProceedingJoinPoint joinPoint) throws Throwable {
+    @Around("execution(public * zxf.springboot.service.*.message.MessageListener.*(..))")
+    public Object aroundNewMessage(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("===> New message {}, Parameters : {}", getSignature(joinPoint), Arrays.toString(joinPoint.getArgs()));
         long start = System.currentTimeMillis();
 
