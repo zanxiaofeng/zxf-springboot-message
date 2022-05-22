@@ -17,5 +17,5 @@ provider "rabbitmq" {
 
 module "service-a-queue" {
   source = "./module/queue"
-  name = "queue"
+  name = "service-a-queue"
 }
