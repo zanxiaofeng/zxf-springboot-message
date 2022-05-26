@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"service-a-queue","Source":"./module/queue","Dir":"module/queue"}]}
+{"Modules":[{"Key":"topic-user","Source":"./module/exchange","Dir":"module/exchange"},{"Key":"topic-user_service-a-queue_binding","Source":"./module/binding","Dir":"module/binding"},{"Key":"topic-user_service-b-queue_binding","Source":"./module/binding","Dir":"module/binding"},{"Key":"","Source":"","Dir":"."},{"Key":"service-a-queue","Source":"./module/queue","Dir":"module/queue"},{"Key":"service-b-queue","Source":"./module/queue","Dir":"module/queue"}]}

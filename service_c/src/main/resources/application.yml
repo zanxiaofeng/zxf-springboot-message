@@ -1,8 +1,8 @@
 server:
-  port: 9001
+  port: 9003
 spring:
   application:
-    name: service_a
+    name: service_c
   rabbitmq:
     host: localhost
     port: 5672

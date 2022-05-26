@@ -19,6 +19,8 @@
     <modules>
         <module>common</module>
         <module>service_a</module>
+        <module>service_b</module>
+        <module>service_c</module>
     </modules>
 
     <properties>

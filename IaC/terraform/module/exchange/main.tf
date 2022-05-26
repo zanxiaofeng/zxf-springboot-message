@@ -7,12 +7,13 @@ terraform {
   }
 }
 
-resource "rabbitmq_queue" "this" {
+resource "rabbitmq_exchange" "this" {
   name  = var.name
   vhost = "/"
 
   settings {
-    durable     = true
+    type        = var.type
+    durable     = false
     auto_delete = false
   }
 }
